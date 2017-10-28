@@ -33,5 +33,5 @@ https://imgur.com/a/F3lcd
 With all MAX attribute value equipments,the character's attributes are here:
 https://imgur.com/a/lANwp
 
-#Conclusion
+# Conclusion
 The DLL Edit successfully edit the equipment's attribute value.
