@@ -1,7 +1,7 @@
 # GD-CodeEdit
 Code Edit 4 Grim dawn
 # Guide
-Here is the DLL edit for grim dawn.
+Here is the DLL analysis & edit for grim dawn.
 
 The target here is to build the MAX attribute value for every euqipments in Grim Dawn.
 
