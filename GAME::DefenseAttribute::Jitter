@@ -1,0 +1,126 @@
+.text:1006EE70 ; =============== S U B R O U T I N E 
+
+=======================================
+.text:1006EE70
+.text:1006EE70 ; Attributes: bp-based frame
+.text:1006EE70
+.text:1006EE70 ; float __thiscall GAME::DefenseAttribute::Jitter
+
+(GAME::DefenseAttribute *this, float, float, struct GAME::RandomUniform *)
+.text:1006EE70                 public ?
+
+Jitter@DefenseAttribute@GAME@@MAEMMMAAVRandomUniform@2@@Z
+.text:1006EE70 ?Jitter@DefenseAttribute@GAME@@MAEMMMAAVRandomUniform@2@@Z 
+
+proc near
+.text:1006EE70                                         ; CODE XREF: 
+
+GAME::CharAttribute::LoadPrefixTable(GAME::LoadTable const 
+
+&,float,GAME::RandomUniform *)+6Ap
+.text:1006EE70                                         ; 
+
+GAME::CharAttribute::LoadSuffixTable(GAME::LoadTable const 
+
+&,float,GAME::RandomUniform *)+6Ap ...
+.text:1006EE70
+.text:1006EE70 arg_0           = dword ptr  8
+.text:1006EE70 arg_4           = dword ptr  0Ch
+.text:1006EE70 arg_8           = dword ptr  10h
+.text:1006EE70
+.text:1006EE70                 push    ebp             ; protected: float 
+
+__thiscall GAME::CharAttribute::Jitter(float, float, class 
+
+GAME::RandomUniform &)
+.text:1006EE70                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeAbs::Jitter(float, float, class 
+
+GAME::RandomUniform &)
+.text:1006EE70                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeAbsMod::Jitter(float, float, class 
+
+GAME::RandomUniform &)
+.text:1006EE70                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeDur::Jitter(float, float, class 
+
+GAME::RandomUniform &)
+.text:1006EE70                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeDurMod::Jitter(float, float, class 
+
+GAME::RandomUniform &)
+.text:1006EE70                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttribute_Physical::Jitter(float, float, class 
+
+GAME::RandomUniform &)
+.text:1006EE71                 mov     ebp, esp
+.text:1006EE73                 movss   xmm2, [ebp+arg_0]
+.text:1006EE78                 ucomiss xmm2, ds:dword_1046BEA0
+.text:1006EE7F                 lahf
+.text:1006EE80                 test    ah, 44h
+.text:1006EE83                 jp      short loc_1006EE8C
+.text:1006EE85
+.text:1006EE85 loc_1006EE85:                           ; CODE XREF: 
+
+GAME::DefenseAttribute::Jitter(float,float,GAME::RandomUniform &)+9Cj
+.text:1006EE85                 fld     [ebp+arg_0]
+.text:1006EE88                 pop     ebp
+.text:1006EE89                 retn    0Ch
+.text:1006EE8C ; 
+
+---------------------------------------------------------------------------
+.text:1006EE8C
+.text:1006EE8C loc_1006EE8C:                           ; CODE XREF: 
+
+GAME::DefenseAttribute::Jitter(float,float,GAME::RandomUniform &)+13j
+.text:1006EE8C                 movaps  xmm0, xmm2
+.text:1006EE8F                 mov     ecx, 1
+.text:1006EE94                 mulss   xmm0, [ebp+arg_4]
+.text:1006EE99                 push    esi
+.text:1006EE9A                 mov     esi, [ebp+arg_8]
+.text:1006EE9D                 push    edi
+.text:1006EE9E                 mulss   xmm0, ds:dword_1046BF08
+.text:1006EEA6                 cvttss2si eax, xmm0
+.text:1006EEAA                 movss   xmm0, ds:dword_1046BF8C
+.text:1006EEB2                 test    eax, eax
+.text:1006EEB4                 cmovz   eax, ecx
+.text:1006EEB7                 xor     edx, edx
+.text:1006EEB9                 mov     [ebp+arg_4], eax
+.text:1006EEBC                 mov     edi, eax
+.text:1006EEBE                 mov     eax, [esi]
+.text:1006EEC0                 mov     ecx, 1F31Dh
+.text:1006EEC5                 div     ecx
+.text:1006EEC7                 neg     edi
+.text:1006EEC9                 imul    edx, 41A7h
+.text:1006EECF                 imul    eax, 0B14h
+.text:1006EED5                 sub     edx, eax
+.text:1006EED7                 lea     ecx, [edx+7FFFFFFFh]
+.text:1006EEDD                 cmovs   edx, ecx
+.text:1006EEE0                 mov     ecx, [ebp+arg_4]
+.text:1006EEE3                 mov     [esi], edx
+.text:1006EEE5                 sub     ecx, edi
+.text:1006EEE7                 mov     eax, edx
+.text:1006EEE9                 inc     ecx
+.text:1006EEEA                 xor     edx, edx
+.text:1006EEEC                 div     ecx
+.text:1006EEEE                 add     edx, edi
+.text:1006EEF0                 pop     edi
+.text:1006EEF1                 pop     esi
+.text:1006EEF2                 movd    xmm1, edx
+.text:1006EEF6                 cvtdq2ps xmm1, xmm1
+.text:1006EEF9                 addss   xmm1, xmm2
+.text:1006EEFD                 movss   [ebp+arg_4], xmm1
+.text:1006EF02                 andps   xmm1, ds:xmmword_1046C230
+.text:1006EF09                 comiss  xmm0, xmm1
+.text:1006EF0C                 ja      loc_1006EE85
+.text:1006EF12                 fld     [ebp+arg_4]
+.text:1006EF15                 pop     ebp
+.text:1006EF16                 retn    0Ch
+.text:1006EF16 ?Jitter@DefenseAttribute@GAME@@MAEMMMAAVRandomUniform@2@@Z 
+
+endp
