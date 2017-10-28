@@ -1,0 +1,83 @@
+.text:1006EF90 ; =============== S U B R O U T I N E 
+
+=======================================
+.text:1006EF90
+.text:1006EF90 ; Attributes: bp-based frame
+.text:1006EF90
+.text:1006EF90 ; float __thiscall GAME::SkillAttribute::MaxJitter
+
+(GAME::SkillAttribute *this, float, float)
+.text:1006EF90                 public ?
+
+MaxJitter@SkillAttribute@GAME@@IAEMMM@Z
+.text:1006EF90 ?MaxJitter@SkillAttribute@GAME@@IAEMMM@Z proc near
+.text:1006EF90                                         ; DATA XREF: 
+
+GAME::DamageAttributeAbsMod::MaxJitter(float)+43o
+.text:1006EF90                                         ; 
+
+GAME::DamageAttributeDurMod::MaxJitter(float)+53o ...
+.text:1006EF90
+.text:1006EF90 arg_0           = dword ptr  8
+.text:1006EF90 arg_4           = dword ptr  0Ch
+.text:1006EF90
+.text:1006EF90                 push    ebp             ; protected: float 
+
+__thiscall GAME::CharAttribute::MaxJitter(float, float)
+.text:1006EF90                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeAbs::MaxJitter(float, float)
+.text:1006EF90                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeAbsMod::MaxJitter(float, float)
+.text:1006EF90                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeDur::MaxJitter(float, float)
+.text:1006EF90                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttributeDurMod::MaxJitter(float, float)
+.text:1006EF90                                         ; protected: virtual 
+
+float __thiscall GAME::DamageAttribute_Physical::MaxJitter(float, float)
+.text:1006EF90                                         ; protected: virtual 
+
+float __thiscall GAME::DefenseAttribute::MaxJitter(float, float)
+.text:1006EF91                 mov     ebp, esp
+.text:1006EF93                 movss   xmm2, [ebp+arg_0]
+.text:1006EF98                 ucomiss xmm2, ds:dword_1046BEA0
+.text:1006EF9F                 lahf
+.text:1006EFA0                 test    ah, 44h
+.text:1006EFA3                 jp      short loc_1006EFAC
+.text:1006EFA5
+.text:1006EFA5 loc_1006EFA5:                           ; CODE XREF: 
+
+GAME::SkillAttribute::MaxJitter(float,float)+5Cj
+.text:1006EFA5                 fld     [ebp+arg_0]
+.text:1006EFA8                 pop     ebp
+.text:1006EFA9                 retn    8
+.text:1006EFAC ; 
+
+---------------------------------------------------------------------------
+.text:1006EFAC
+.text:1006EFAC loc_1006EFAC:                           ; CODE XREF: 
+
+GAME::SkillAttribute::MaxJitter(float,float)+13j
+.text:1006EFAC                 movaps  xmm0, xmm2
+.text:1006EFAF                 mov     ecx, 1
+.text:1006EFB4                 mulss   xmm0, [ebp+arg_4]
+.text:1006EFB9                 mulss   xmm0, ds:dword_1046BF08
+.text:1006EFC1                 cvttss2si eax, xmm0
+.text:1006EFC5                 movss   xmm0, ds:dword_1046BF8C
+.text:1006EFCD                 test    eax, eax
+.text:1006EFCF                 cmovz   eax, ecx
+.text:1006EFD2                 movd    xmm1, eax
+.text:1006EFD6                 cvtdq2ps xmm1, xmm1
+.text:1006EFD9                 addss   xmm1, xmm2
+.text:1006EFDD                 movss   [ebp+arg_4], xmm1
+.text:1006EFE2                 andps   xmm1, ds:xmmword_1046C230
+.text:1006EFE9                 comiss  xmm0, xmm1
+.text:1006EFEC                 ja      short loc_1006EFA5
+.text:1006EFEE                 fld     [ebp+arg_4]
+.text:1006EFF1                 pop     ebp
+.text:1006EFF2                 retn    8
+.text:1006EFF2 ?MaxJitter@SkillAttribute@GAME@@IAEMMM@Z endp
