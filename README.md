@@ -14,7 +14,7 @@ for example:
 
 A item has 5 base fire damage,its jitter is 25,then the attribute value is between 5 * 75%=3.75 and 5 * 125%=6.25.
 
-The final attribute value is revalant to item's seed,the seed is a RNG that multiply with jitter(from -1 * jitter to 1 * jitter).
+The final attribute value is revalant to item's seed,the seed is a RNG.So that the attribute values are RNG multiply with jitter(from -1 * jitter to 1 * jitter).
 
 We skip the item seed calculation to make the MAX varibles.
 
