@@ -16,3 +16,4 @@ if (ri>=0) and (ti>=0):
 	u=open('game.dll','wb')
 	u.write(t)
 	u.close()
+	
