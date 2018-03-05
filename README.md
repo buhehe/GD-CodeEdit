@@ -1,3 +1,6 @@
+# New! Update 1.050
+Update the asm code to fit the newest version.
+
 # GD-CodeEdit
 Code Edit 4 Grim dawn
 
